@@ -153,6 +153,12 @@ footer ul{list-style:none;margin:0;padding:0;font-size:17px}footer li{margin-bot
 @media(max-width:900px){.viz{grid-template-columns:minmax(0,1fr)}}
 @media(max-width:700px){.art{max-width:180px}}
 @media(max-width:520px){.brow{grid-template-columns:minmax(0,1fr) 4.2em}.bl{grid-column:1/-1;margin-bottom:-8px}.axisrow .sp1{display:none}.cc{height:170px;gap:6px}.cls{gap:6px}.cv{font-size:15px}}
+.shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:18px;margin:26px 0 4px}
+.shots figure{margin:0}
+.shots img{display:block;width:100%;height:auto;border:2px solid var(--line);background:var(--card)}
+.shots .tall{max-height:560px;overflow-y:auto;border:2px solid var(--line);overscroll-behavior:contain}
+.shots .tall img{border:0}
+.shots figcaption{font-size:14px;color:var(--soft);margin-top:8px}
 @media(max-width:900px){
 .hero .wrap{grid-template-columns:minmax(0,1fr)}
 .flow{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:18px}
@@ -354,6 +360,24 @@ table{font-size:13px}.stack thead{display:none}.stack tr{display:grid;padding-bl
             <div><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.5-7-12a7 7 0 0114 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg><b>2</b><span>Regional Google Ads campaigns beyond Dhaka &amp; Chittagong</span></div>
             <div><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><b>2.5 yrs</b><span>Pilot became a long-running store</span></div>
           </div>
+        </div>
+        <div class="shots">
+          <figure>
+            <picture>
+              <source srcset="images/robi-bazar-product-details.webp" type="image/webp">
+              <img src="images/robi-bazar-product-details.jpg" width="1299" height="1114" loading="lazy" decoding="async" alt="Robi Bazar product detail page from 2019: an iPhone 7 with price in taka, a 10 GB bundle offer badge, an add-to-bag control and a full specification list, over a Robi and Airtel campaign banner.">
+            </picture>
+            <figcaption>Product detail page, 2019 design: price against MRP, the bundled data offer, a quantity-in-bag control and full specs, in English and Bangla.</figcaption>
+          </figure>
+          <figure>
+            <div class="tall" tabindex="0" role="region" aria-label="Full home page design, scrollable">
+              <picture>
+                <source srcset="images/robi-bazar-home.webp" type="image/webp">
+                <img src="images/robi-bazar-home.jpg" width="900" height="2993" loading="lazy" decoding="async" alt="Robi Bazar home page from 2019: campaign banner, a grid of phones with discount badges, prices and add-to-bag buttons, a favourite brands row, a why-choose-us section, newsletter signup and a bilingual footer.">
+              </picture>
+            </div>
+            <figcaption>Home page, 2019 design (scroll inside the frame): device grid with discounts, brand shortcuts and a bilingual footer.</figcaption>
+          </figure>
         </div>
       </div>
     </article>
