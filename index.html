@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Riaz Rahman — Web Developer</title>
+<meta name="description" content="Riaz Rahman, Calgary web developer: WordPress and WooCommerce builds, custom plugins, Google Analytics 4, Tag Manager, Google Ads and technical SEO case studies.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Riaz Rahman — Web Developer">
+<meta property="og:description" content="WordPress and WooCommerce sites, custom plugins, and the GA4, GTM and SEO work that proves what they earn.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Riaz Rahman","jobTitle":"Web Developer & Digital Solutions Specialist","email":"mailto:riazrbony@outlook.com","address":{"@type":"PostalAddress","addressLocality":"Calgary","addressRegion":"AB","addressCountry":"CA"},"sameAs":["https://www.linkedin.com/in/riazrbony","https://riazrbony.carbonmade.com"],"knowsAbout":["WordPress","WooCommerce","PHP","Google Analytics 4","Google Tag Manager","Google Ads","Technical SEO","Schema markup"]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+/* VOICE: confident, plain, evidence first — a developer who shows how, not just what.
+   IDEA: a component datasheet: part header, spec table, block diagram, test results.
+   PICTURE: the measurement chain as a block diagram, click → GTM → GA4 → Ads → report, looping back.
+   COLOUR and TYPE: white, black, emerald blocks, pale pink for "fill in" slots; Schibsted Grotesk 800/400.
+   LAYOUT: page cut into rectangles like a medicine box; case studies as datasheet sections with a spec rail. */
+:root{color-scheme:light dark;
+--bg:light-dark(#fff,#04140d);--ink:light-dark(#0b0b0b,#eef6f1);--soft:light-dark(#4a4f4c,#a9bdb2);
+--em:#00a86b;--em-ink:light-dark(#006b45,#4fe0a6);--em-block:light-dark(#00a86b,#0a6b48);
+--pink:light-dark(#ffd6e0,#4a2530);--pink-ink:light-dark(#7a1f37,#ffd6e0);
+--line:light-dark(#0b0b0b,#2b4a3c);--hair:light-dark(#dcdfdd,#1d3a2d);--card:light-dark(#f4f7f5,#0a2018)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.6 "Schibsted Grotesk",system-ui,sans-serif;overflow-x:clip}
+a{color:var(--em-ink);text-underline-offset:3px}
+h1,h2,h3{font-weight:800;line-height:1.08;text-wrap:balance;margin:0}
+h1{font-size:clamp(34px,5vw,52px)}h2{font-size:clamp(28px,3.6vw,40px)}h3{font-size:20px;line-height:1.25}
+p{margin:0 0 14px;max-width:68ch}
+.wrap{max-width:1240px;margin:0 auto}
+.band{padding:clamp(32px,5vw,72px) max(5vw,16px)}
+.small{font-size:14px;color:var(--soft)}
+
+nav.top{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:3px solid var(--line)}
+nav.top .wrap{display:flex;align-items:center;gap:20px;padding:12px max(5vw,16px);flex-wrap:wrap}
+nav.top b{font-weight:800;margin-right:auto}
+nav.top .scroll{display:flex;gap:18px;overflow-x:auto;white-space:nowrap}nav.top .scroll a{flex:none}
+nav.top a{color:var(--ink);text-decoration:none;font-weight:500;padding:6px 0}
+nav.top a:hover,nav.top a:focus-visible{color:var(--em-ink)}
+@media(max-width:600px){nav.top{position:static}}
+
+/* hero */
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:stretch}
+.part{font-weight:700;color:var(--em-ink);margin-bottom:14px}
+.lede{font-size:19px;margin:18px 0 24px}
+.spec{width:100%;border-collapse:collapse;border-top:3px solid var(--line);font-size:15px}
+.spec th,.spec td{padding:9px 0;border-bottom:1px solid var(--hair);text-align:left;vertical-align:top}
+.spec th{width:38%;font-weight:700;padding-right:12px}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.btn{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;font-size:16px;font-weight:700;font-family:inherit;border:2px solid var(--line);color:var(--ink);background:transparent;text-decoration:none;cursor:pointer}
+.btn.solid{background:var(--em-block);border-color:var(--em-block);color:#fff}
+.btn:focus-visible{outline:3px solid var(--em);outline-offset:2px}
+.diagram{background:var(--em-block);color:#fff;display:flex;flex-direction:column;padding:22px}
+.diagram .fig{position:relative;flex:1;min-height:380px}
+.diagram svg{position:absolute;inset:0;width:100%;height:100%}
+.diagram p{margin:12px 0 0;font-size:14px;opacity:.9}
+
+/* sections */
+.head{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:24px;border-top:3px solid var(--line);padding-top:18px;margin-bottom:28px}
+.head .tag{font-weight:700;color:var(--em-ink)}
+.case{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:24px;padding:28px 0;border-top:1px solid var(--hair)}
+.rail dl{margin:0;font-size:14px}.rail dt{font-weight:700;margin-top:10px}.rail dd{margin:0;color:var(--soft)}
+.case h3{font-size:clamp(22px,2.4vw,28px);margin-bottom:12px}
+.cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;margin-top:8px}
+.cols h4{margin:0 0 8px;font-size:16px}
+ol.steps,ul.ticks{margin:0;padding-left:20px}ol.steps li,ul.ticks li{margin-bottom:8px}
+.results{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2px;margin:22px 0 6px;background:var(--line);border:2px solid var(--line)}
+.results div{background:var(--bg);padding:14px}
+.results b{display:block;font-size:clamp(22px,2.6vw,30px);font-weight:800;line-height:1.1}
+.results span{font-size:13px;color:var(--soft)}
+.fill{display:inline-block;background:var(--pink);color:var(--pink-ink);border:1.5px dashed currentColor;padding:0 6px;font-size:15px !important;font-weight:700}
+.chip{display:inline-block;background:var(--card);border:1px solid var(--hair);padding:2px 10px;margin:0 6px 6px 0;font-size:14px}
+
+/* process */
+.process{background:var(--pink);color:light-dark(#0b0b0b,#ffe9ef)}
+.process .head{border-color:currentColor}.process .head .tag{color:inherit}
+.flow{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;counter-reset:s}
+.flow div{border-left:3px solid currentColor;padding:4px 18px 4px 14px}
+.flow b{display:block;font-size:18px;margin-bottom:6px}
+.flow p{font-size:15px;margin:0}
+
+/* audit */
+table.audit{width:100%;border-collapse:collapse;font-size:15px;border-top:3px solid var(--line)}
+.audit th,.audit td{text-align:left;padding:11px 10px 11px 0;border-bottom:1px solid var(--hair);vertical-align:top}
+.audit thead th{font-size:13px;color:var(--soft);font-weight:700}
+.audit td:first-child{font-weight:700;width:30%}
+.pri{display:inline-block;font-size:13px;font-weight:700;padding:1px 8px;white-space:nowrap}
+.pri.h{background:var(--em-block);color:#fff}.pri.m{background:var(--pink);color:var(--pink-ink)}.pri.l{border:1px solid var(--hair)}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.9em;overflow-wrap:anywhere}
+pre{overflow-x:auto;background:light-dark(#0b0b0b,#000);color:#d9f7e9;padding:18px;font-size:13.5px;line-height:1.5;margin:0}
+.code{position:relative;margin-top:18px}
+.code button{position:absolute;top:8px;right:8px;min-height:36px;background:#fff;color:#000;border:0;font-size:14px;font-weight:700;font-family:inherit;padding:0 12px;cursor:pointer}
+
+.box3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px;background:var(--line);border:2px solid var(--line)}
+.box3>div{background:var(--bg);padding:20px}
+.box3 h3{margin-bottom:8px}
+
+footer{background:var(--em-block);color:#fff}
+footer a{color:#fff}
+footer .wrap{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:28px}
+footer ul{list-style:none;margin:0;padding:0;font-size:17px}footer li{margin-bottom:8px}
+
+@media(max-width:900px){
+.hero .wrap{grid-template-columns:minmax(0,1fr)}
+.flow{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:18px}
+.results{grid-template-columns:repeat(2,minmax(0,1fr))}
+.box3{grid-template-columns:minmax(0,1fr)}
+}
+@media(max-width:700px){
+.head,.case,.cols,footer .wrap{grid-template-columns:minmax(0,1fr)}
+.head{gap:6px}.case{gap:10px}
+}
+@media(max-width:600px){
+.flow{grid-template-columns:minmax(0,1fr)}
+.diagram .fig{min-height:320px}
+table{font-size:13px}.stack thead{display:none}.stack tr{display:grid;padding-block:10px;border-bottom:1px solid var(--hair)}.stack td{display:flow-root;border:0;padding:3px 0;padding-inline-start:7em;text-align:start}.stack td:first-child{width:auto}.stack td::before{content:attr(data-l);float:inline-start;width:6.5em;margin-inline-start:-7em;white-space:normal;font-weight:700;color:var(--soft)}.stack td:empty{display:none}
+}
+</style>
+<script>new MutationObserver(()=>{for(const c of document.querySelectorAll('.stack td:not([data-l])')){let i=0,p=c;while(p=p.previousElementSibling)i+=p.colSpan;c.dataset.l=c.closest('table').rows[0].cells[i]?.textContent||''}}).observe(document,{childList:true,subtree:true})</script>
+</head>
+<body>
+
+<nav class="top" aria-label="Sections">
+  <div class="wrap">
+    <b>Riaz Rahman</b>
+    <div class="scroll">
+      <a href="#work">Work</a>
+      <a href="#method">How I measure</a>
+      <a href="#mro">MRO audit</a>
+      <a href="#code">Code</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="band hero">
+  <div class="wrap">
+    <div>
+      <div class="part">Web Developer &amp; Digital Solutions Specialist · Calgary, AB</div>
+      <h1>I build WordPress and WooCommerce sites, then prove what they earn.</h1>
+      <p class="lede">8+ years across e-commerce, product and front-end work. I write the plugin, set up the tracking, run the ads and read the data, so a business can see which page, search or campaign brought in the lead.</p>
+      <table class="spec">
+        <tr><th>Build</th><td>WordPress, WooCommerce, PHP, HTML, CSS, JavaScript, custom plugins, REST APIs</td></tr>
+        <tr><th>Measure</th><td>Google Analytics 4, Google Tag Manager, Search Console, Looker Studio</td></tr>
+        <tr><th>Grow</th><td>Google Ads (search &amp; call), technical and local SEO, schema markup, landing pages</td></tr>
+        <tr><th>Also</th><td>WCAG/AODA accessibility, design systems, Python basics, AI-assisted workflows</td></tr>
+      </table>
+      <div class="cta">
+        <a class="btn solid" href="#work">See the case studies</a>
+        <a class="btn" href="#mro">Read my MRO audit</a>
+      </div>
+    </div>
+    <figure class="diagram" aria-labelledby="dcap" style="margin:0">
+      <div class="fig">
+        <svg viewBox="0 0 520 420" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Measurement chain: a click or call is tagged in Google Tag Manager, recorded as a GA4 key event, imported to Google Ads as a conversion, and reported in Looker Studio, which feeds the next round of changes.">
+          <defs>
+            <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#fff"/></marker>
+            <g id="blk"><rect x="6" y="8" width="300" height="56" fill="#00000033"/><rect width="300" height="56" fill="#fff"/><rect width="8" height="56" fill="#0b0b0b"/></g>
+          </defs>
+          <g font-family="Schibsted Grotesk, sans-serif">
+            <use href="#blk" x="40" y="14"/><use href="#blk" x="90" y="96"/><use href="#blk" x="140" y="178"/><use href="#blk" x="90" y="260"/><use href="#blk" x="40" y="342"/>
+            <g fill="#0b0b0b">
+              <text x="62" y="38" font-size="16" font-weight="800">Visitor clicks or calls</text><text x="62" y="57" font-size="13">ad, search result, quote button</text>
+              <text x="112" y="120" font-size="16" font-weight="800">Google Tag Manager</text><text x="112" y="139" font-size="13">dataLayer event → tag fires</text>
+              <text x="162" y="202" font-size="16" font-weight="800">GA4 key event</text><text x="162" y="221" font-size="13">generate_lead, call_click</text>
+              <text x="112" y="284" font-size="16" font-weight="800">Google Ads conversion</text><text x="112" y="303" font-size="13">bids learn from real leads</text>
+              <text x="62" y="366" font-size="16" font-weight="800">Report &amp; decide</text><text x="62" y="385" font-size="13">Looker Studio + Search Console</text>
+            </g>
+            <g stroke="#fff" stroke-width="2.5" fill="none" marker-end="url(#ar)">
+              <path d="M190 70 V92"/><path d="M240 152 V174"/><path d="M290 234 V256"/><path d="M190 316 V338"/>
+              <path d="M346 370 H470 V42 H352" stroke-dasharray="6 6"/>
+            </g>
+            <text x="482" y="215" fill="#fff" font-size="14" font-weight="700" transform="rotate(90 482 215)" text-anchor="middle">improve and repeat</text>
+          </g>
+        </svg>
+      </div>
+      <figcaption id="dcap"><p>Every project below follows this chain, so results are counted, not guessed.</p></figcaption>
+    </figure>
+  </div>
+</header>
+
+<section class="band" id="work">
+  <div class="wrap">
+    <div class="head"><div class="tag">Case studies</div><h2>Work with real clients, real traffic and real leads</h2></div>
+
+    <article class="case">
+      <div class="rail"><dl>
+        <dt>Client</dt><dd>iFAST Roadside Assistance, Greater Toronto Area</dd>
+        <dt>Role</dt><dd>Google Ads, conversion tracking, local SEO</dd>
+        <dt>Stack</dt><dd>Google Ads, GTM, GA4, Search Console</dd>
+        <dt>Live</dt><dd><a href="https://www.ifastroadside.ca/">ifastroadside.ca</a></dd>
+      </dl></div>
+      <div>
+        <h3>Turning emergency searches into phone calls a 24/7 tow business can count</h3>
+        <p>iFAST sells urgent help: towing, jump starts, lockouts and mobile tire service across the GTA. Customers don't fill in forms; they tap to call or message on WhatsApp. So the job was to buy the right searches and to count every call and message as a lead.</p>
+        <div class="cols">
+          <div>
+            <h4>How I did it</h4>
+            <ol class="steps">
+              <li>Built Search campaigns by service (towing, battery, tires, lockout) so budget and ad copy match what the driver typed.</li>
+              <li>Targeted the GTA service area, ran ads 24/7, and added negative keywords to cut job seekers and DIY searches.</li>
+              <li>Tracked every <code>tel:</code> link and WhatsApp button in Google Tag Manager as GA4 events, marked them as key events, and imported them into Google Ads as conversions.</li>
+              <li>Read Search Console queries to find services and cities people searched for, and fed them back into ads and page copy.</li>
+            </ol>
+          </div>
+          <div>
+            <h4>What I'd do next</h4>
+            <ul class="ticks">
+              <li>Add LocalBusiness / AutomotiveBusiness schema with service areas and opening hours.</li>
+              <li>Build city pages for Mississauga, Brampton, Markham and Vaughan, which the site's description names but doesn't have pages for yet.</li>
+              <li>Add call-length conversions so short misdials don't count as leads.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="results" aria-label="Results">
+          <div><b><span class="fill">add</span></b><span>Calls &amp; WhatsApp leads per month</span></div>
+          <div><b><span class="fill">add</span></b><span>Cost per lead</span></div>
+          <div><b><span class="fill">add</span></b><span>Click-through rate</span></div>
+          <div><b><span class="fill">add</span></b><span>Change vs. before</span></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="case">
+      <div class="rail"><dl>
+        <dt>Company</dt><dd>Chaldal (Y Combinator W15) in partnership with Robi Axiata, Bangladesh</dd>
+        <dt>Year</dt><dd>2019</dd>
+        <dt>Role</dt><dd>Built and ran the whole site</dd>
+        <dt>Stack</dt><dd>WordPress, WooCommerce, PHP, custom plugins, Python scripts</dd>
+      </dl></div>
+      <div>
+        <h3>A WooCommerce store selling smartphones bundled with mobile plans</h3>
+        <p>Chaldal and Robi, one of Bangladesh's largest mobile operators, sold smartphones together with Robi plans. I created the WooCommerce site from scratch and kept it running: catalog, bundles, checkout and the custom plugins that made phone-plus-plan sales work. The service has since been discontinued.</p>
+        <div class="cols">
+          <div>
+            <h4>What I built</h4>
+            <ul class="ticks">
+              <li>Phone catalog with variations (model, storage, colour) and plan bundles attached to each handset.</li>
+              <li>Custom PHP plugins for bundle logic and order handling the stock WooCommerce setup couldn't do.</li>
+              <li>Python scripts for product and stock data upkeep.</li>
+              <li>Mobile-first, responsive storefront for customers shopping on phones.</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Results</h4>
+            <p><span class="fill">add: orders, revenue or traffic figures you can share</span></p>
+            <p class="small">Original screenshots go here; the site is offline, so I show the build rather than a live link.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="case">
+      <div class="rail"><dl>
+        <dt>Project</dt><dd>Karoute, driving lessons in Toronto</dd>
+        <dt>Status</dt><dd>In progress</dd>
+        <dt>Stack</dt><dd>WordPress, WooCommerce, booking plugin, custom post types, ACF</dd>
+        <dt>Live</dt><dd><a href="https://www.karoute.com/">karoute.com</a></dd>
+      </dl></div>
+      <div>
+        <h3>A booking site for driving lessons, planned around local search from day one</h3>
+        <p>My own project: learners book lessons with approved instructors, track their hours, and get ready for the road test. I'm planning the site structure for SEO before writing any pages, so every page has a search it's meant to rank for.</p>
+        <div class="cols">
+          <div>
+            <h4>Build plan</h4>
+            <ul class="ticks">
+              <li>Postal-code instructor matching (custom plugin) → package → time and pickup spot.</li>
+              <li>Instructor profiles as a custom post type with ratings.</li>
+              <li>Student dashboard for logged lesson hours.</li>
+              <li>G1 practice quiz as a free tool that attracts links and searches.</li>
+            </ul>
+          </div>
+          <div>
+            <h4>SEO and tracking plan</h4>
+            <ul class="ticks">
+              <li>One page per neighbourhood and city (Scarborough, North York, Etobicoke…), each with its own instructors and FAQs.</li>
+              <li>DrivingSchool, FAQPage and Review schema.</li>
+              <li>GA4 booking funnel: <code>postal_code_entered</code> → <code>package_selected</code> → <code>purchase</code>.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="band process" id="method">
+  <div class="wrap">
+    <div class="head"><div class="tag">How I measure</div><h2>The same five steps on every site, so SEO and ads results are counted, not guessed</h2></div>
+    <div class="flow">
+      <div><b>1. Plan</b><p>Agree what counts as a win: a quote request, a call, a datasheet download. Write it down as a short measurement plan.</p></div>
+      <div><b>2. Tag</b><p>Push clean <code>dataLayer</code> events from the site; fire GA4 tags from Google Tag Manager, never hard-coded.</p></div>
+      <div><b>3. Count</b><p>Mark the important events as GA4 key events and import them into Google Ads as conversions.</p></div>
+      <div><b>4. Find</b><p>Search Console for queries, indexing and Core Web Vitals; GA4 funnels to see where people drop off.</p></div>
+      <div><b>5. Fix &amp; report</b><p>Ship the change, then show the before and after in a Looker Studio report the sales team can read.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="mro">
+  <div class="wrap">
+    <div class="head"><div class="tag">Prepared for MRO</div><h2>A quick technical SEO check of mroelectronics.com</h2></div>
+    <p>I reviewed the public homepage on 24 November 2026: tags, headings, links, images and metadata. The site already has good bones: WordPress with WooCommerce, an SEO plugin, Google Tag Manager, full Open Graph tags and a clear title aimed at cable assemblies and wire harnesses. These are the fixes I'd start with.</p>
+    <table class="audit stack">
+      <thead><tr><th>Finding</th><th>Why it matters</th><th>Fix</th><th>Priority</th></tr></thead>
+      <tbody>
+        <tr><td>The Calgary number (403-291-0501) links to the toll-free number</td><td>Callers who tap the Calgary number reach a different line, and call tracking counts it in the wrong place.</td><td>Change the link to <code>tel:+14032910501</code>; track each number as its own GTM event.</td><td><span class="pri h">High</span></td></tr>
+        <tr><td>"Connectors" menu link goes to <code>#</code></td><td>A main product category gets no link from the menu, so it gets less search weight and is a dead end on mobile.</td><td>Point it to the Connectors product category.</td><td><span class="pri h">High</span></td></tr>
+        <tr><td>H1 doesn't name what MRO makes</td><td>The title targets "cable assemblies &amp; wire harnesses", but the H1 is a slogan ("Rugged Connectivity…"), which weakens the page's main topic signal.</td><td>Keep the slogan as a subhead; make the H1 say "Custom cable assemblies and wire harnesses".</td><td><span class="pri h">High</span></td></tr>
+        <tr><td>Leftover language tags in alt text: <code>[:en]cropped MRO New 1[:]</code></td><td>Search engines and screen readers read the raw tags. They also show up in the social sharing image alt text.</td><td>Clean up the old multilingual plugin's tags in the Media Library and SEO plugin; name the logo "MRO Electronic Supply logo".</td><td><span class="pri m">Medium</span></td></tr>
+        <tr><td>Several images have empty alt text (sector and badge images)</td><td>Lost image-search traffic and an accessibility gap.</td><td>Write short, descriptive alt text; leave purely decorative images empty on purpose.</td><td><span class="pri m">Medium</span></td></tr>
+        <tr><td>Two URLs for the same pages (<code>/sectors-we-serve/</code> vs <code>/all-sectors-we-serve/</code>, <code>/about-us/</code> vs <code>/about/</code>)</td><td>Links split between versions, or pass through redirects.</td><td>Pick one URL each, update internal links, and 301-redirect the other.</td><td><span class="pri m">Medium</span></td></tr>
+        <tr><td>The homepage is tagged like a blog article (published/modified dates)</td><td>It sends mixed signals about what kind of page this is.</td><td>Set the homepage as WebPage with Organization schema (name, logo, addresses, phones) in the SEO plugin.</td><td><span class="pri m">Medium</span></td></tr>
+        <tr><td>Brand name spelled two ways ("MRO Electronics Supply LTD." and "MRO Electronic Supply Ltd.")</td><td>Search engines connect a business across sites by its name.</td><td>Use one legal name everywhere: metadata, schema, footer and Google Business Profiles.</td><td><span class="pri l">Low</span></td></tr>
+        <tr><td>Product pages: add part numbers and specs to the schema</td><td>Engineers search by part number and spec. Structured specs help those pages match the search.</td><td>Add <code>mpn</code> and <code>additionalProperty</code> to Product schema, which is what my plugin below does.</td><td><span class="pri m">Opportunity</span></td></tr>
+      </tbody>
+    </table>
+    <p class="small" style="margin-top:14px">Checked from the public homepage only. Next I'd confirm the structured data in Google's Rich Results Test, check Search Console coverage and Core Web Vitals, and check that Request a Quote submissions are counted as GA4 key events.</p>
+  </div>
+</section>
+
+<section class="band" id="code" style="background:var(--card)">
+  <div class="wrap">
+    <div class="head"><div class="tag">Code sample</div><h2>B2B Spec Sheet &amp; Quote: a WooCommerce plugin for electronics catalogs</h2></div>
+    <div class="box3">
+      <div><h3>For buyers</h3><p>A specifications tab, a datasheet download and a "Request a quote" dialog on every product. Accessible, mobile-friendly, no jQuery.</p></div>
+      <div><h3>For search</h3><p>Adds the part number, every spec and the datasheet to WooCommerce's Product schema, so Google can read the technical data.</p></div>
+      <div><h3>For sales &amp; marketing</h3><p>Quotes are saved, emailed, sent to a CRM webhook and available through a REST API. GA4 events (<code>quote_start</code>, <code>generate_lead</code>) go through GTM.</p></div>
+    </div>
+    <div class="code">
+      <button type="button" id="copy">Copy</button>
+<pre><code id="snip">// Add specs + MPN to WooCommerce's Product JSON-LD
+add_filter( 'woocommerce_structured_data_product', function ( $markup, $product ) {
+    $id = $product->get_id();
+    if ( $mpn = get_post_meta( $id, '_b2bsq_mpn', true ) ) {
+        $markup['mpn'] = $mpn;
+    }
+    foreach ( B2BSQ_Plugin::get_specs( $id ) as $row ) {
+        $markup['additionalProperty'][] = array(
+            '@type' => 'PropertyValue',
+            'name'  => $row['label'],   // e.g. "Impedance"
+            'value' => $row['value'],   // e.g. "50 Ω"
+        );
+    }
+    return $markup;
+}, 10, 2 );</code></pre>
+    </div>
+    <p class="small" style="margin-top:12px">Simplified from the plugin's <code>extend_product_schema()</code> method. Also includes: nonce check, honeypot and rate limit on the quote API, sanitised input and escaped output.</p>
+  </div>
+</section>
+
+<footer class="band" id="contact">
+  <div class="wrap">
+    <div>
+      <h2>Let's talk about MRO's next build.</h2>
+      <p style="margin-top:14px">I'm most useful where code, analytics and sales meet: a quote flow that sales can trust, product pages engineers can find, and reports that show what's working.</p>
+    </div>
+    <ul>
+      <li>Email: <a href="mailto:riazrbony@outlook.com">riazrbony@outlook.com</a></li>
+      <li>Phone: 226-724-5001</li>
+      <li>LinkedIn: <a href="https://www.linkedin.com/in/riazrbony">linkedin.com/in/riazrbony</a></li>
+      <li>Design work: <a href="https://riazrbony.carbonmade.com">riazrbony.carbonmade.com</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+{
+  const btn = document.getElementById('copy');
+  btn.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(document.getElementById('snip').textContent);
+      btn.textContent = 'Copied';
+    } catch (e) {
+      btn.textContent = 'Select and copy';
+    }
+    setTimeout(() => { btn.textContent = 'Copy'; }, 1800);
+  });
+}
+</script>
+</body>
+</html>
