@@ -2,6 +2,13 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TNKLCH6H');</script>
+<!-- End Google Tag Manager -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Riaz Rahman — Web Developer</title>
 <meta name="google-site-verification" content="hxHH03SrgYIN4uFLsmG7IeY5S84nSKKxrBkmPnzJ1YE" />
@@ -125,6 +132,9 @@ table{font-size:13px}.stack thead{display:none}.stack tr{display:grid;padding-bl
 <script>new MutationObserver(()=>{for(const c of document.querySelectorAll('.stack td:not([data-l])')){let i=0,p=c;while(p=p.previousElementSibling)i+=p.colSpan;c.dataset.l=c.closest('table').rows[0].cells[i]?.textContent||''}}).observe(document,{childList:true,subtree:true})</script>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TNKLCH6H" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <nav class="top" aria-label="Sections">
   <div class="wrap">
@@ -152,8 +162,8 @@ table{font-size:13px}.stack thead{display:none}.stack tr{display:grid;padding-bl
         <tr><th>Also</th><td>WCAG/AODA accessibility, design systems, Python basics, AI-assisted workflows</td></tr>
       </table>
       <div class="cta">
-        <a class="btn solid" href="#work">See the case studies</a>
-        <a class="btn" href="#mro">Read my MRO audit</a>
+        <a class="btn solid" href="#work" data-track="cta_case_studies">See the case studies</a>
+        <a class="btn" href="#mro" data-track="cta_mro_audit">Read my MRO audit</a>
       </div>
     </div>
     <figure class="diagram" aria-labelledby="dcap" style="margin:0">
@@ -351,7 +361,7 @@ add_filter( 'woocommerce_structured_data_product', function ( $markup, $product 
 }, 10, 2 );</code></pre>
     </div>
     <p class="small" style="margin-top:12px">Simplified from the plugin's <code>extend_product_schema()</code> method. Also includes: nonce check, honeypot and rate limit on the quote API, sanitised input and escaped output.</p>
-    <div class="cta"><a class="btn solid" href="https://github.com/riazrbony/b2b-spec-quote">View the full code on GitHub</a></div>
+    <div class="cta"><a class="btn solid" href="https://github.com/riazrbony/b2b-spec-quote" data-track="github_plugin">View the full code on GitHub</a></div>
   </div>
 </section>
 
@@ -362,21 +372,42 @@ add_filter( 'woocommerce_structured_data_product', function ( $markup, $product 
       <p style="margin-top:14px">I'm most useful where code, analytics and sales meet: a quote flow that sales can trust, product pages engineers can find, and reports that show what's working.</p>
     </div>
     <ul>
-      <li>Email: <a href="mailto:riazrbony@outlook.com">riazrbony@outlook.com</a></li>
+      <li>Email: <a href="mailto:riazrbony@outlook.com" data-track="contact_email">riazrbony@outlook.com</a></li>
       <li>Phone: 226-724-5001</li>
-      <li>LinkedIn: <a href="https://www.linkedin.com/in/riazrbony">linkedin.com/in/riazrbony</a></li>
-      <li>Design work: <a href="https://riazrbony.carbonmade.com">riazrbony.carbonmade.com</a></li>
+      <li>LinkedIn: <a href="https://www.linkedin.com/in/riazrbony" data-track="contact_linkedin">linkedin.com/in/riazrbony</a></li>
+      <li>Design work: <a href="https://riazrbony.carbonmade.com" data-track="contact_design_portfolio">riazrbony.carbonmade.com</a></li>
     </ul>
   </div>
 </footer>
 
 <script>
 {
+  const dl = (window.dataLayer = window.dataLayer || []);
+  // One delegated listener: any element with data-track sends a portfolio_click event to GTM.
+  document.addEventListener('click', (e) => {
+    const el = e.target.closest('[data-track]');
+    if (el) dl.push({ event: 'portfolio_click', click_name: el.dataset.track, link_url: el.href || '' });
+  });
+  // Section views: fires once per section when it reaches the middle of the screen.
+  const seen = new Set();
+  const io = new IntersectionObserver((entries) => {
+    for (const en of entries) {
+      if (en.isIntersecting && !seen.has(en.target.id)) {
+        seen.add(en.target.id);
+        dl.push({ event: 'section_view', section_id: en.target.id });
+      }
+    }
+  }, { rootMargin: '0px 0px -50% 0px' });
+  for (const id of ['work', 'method', 'mro', 'code', 'contact']) {
+    const el = document.getElementById(id);
+    if (el) io.observe(el);
+  }
   const btn = document.getElementById('copy');
   btn.addEventListener('click', async () => {
     try {
       await navigator.clipboard.writeText(document.getElementById('snip').textContent);
       btn.textContent = 'Copied';
+      dl.push({ event: 'code_copy', snippet: 'product_schema_filter' });
     } catch (e) {
       btn.textContent = 'Select and copy';
     }
